@@ -1,0 +1,6 @@
+{
+	"appId": "io.ionic.starter",
+	"appName": "ONACC-MA",
+	"webDir": "www",
+	"bundledWebRuntime": false
+}
