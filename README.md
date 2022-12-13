@@ -25,11 +25,11 @@
 
 Get started with Angular CLI, learn the fundamentals and explore advanced topics on documentation website.
 
-- [Getting started][https://angular.io/start]
-- [CLI][https://angular.io/cli]
-- [Workspace and project file structure][https://angular.io/guide/file-structure]
-- [Workspace configuration][https://angular.io/guide/workspace-config]
-- [Schematics][https://angular.io/guide/schematics]
+- [Getting started](https://angular.io/start)
+- [CLI](https://angular.io/cli)
+- [Workspace and project file structure](https://angular.io/guide/file-structure)
+- [Workspace configuration](https://angular.io/guide/workspace-config)
+- [Schematics](https://angular.io/guide/schematics)
 
 
 Get started with Ionic, learn the fundamentals and explore advanced topics on documentation website.
