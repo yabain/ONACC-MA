@@ -9,13 +9,13 @@
   <br>
 </p>
 
-<p align="center">Par:
+<p align="center">By:
   <a href="https://yabain.com"><strong>Yaba-In</strong></a>
   <br>
 </p>
 
-<p align="center">Pour :
-  <a href=""><strong>M. Alexis TAKOUDJOU</strong></a>
+<p align="center">For :
+  <a href="#"><strong>M. Alexis TAKOUDJOU</strong></a>
   <br>
 </p>
 
