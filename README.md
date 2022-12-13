@@ -81,8 +81,7 @@ ionic serve --l
 **Yaba-In, your software solution compagny.**
 
 
-Footer
+
 © 2022 Yaba-In
-Footer navigation
 
 
