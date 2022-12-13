@@ -1,0 +1,7 @@
+{
+  "name": "ONACC-MA",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}

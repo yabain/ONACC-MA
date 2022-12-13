@@ -1,0 +1,56 @@
+<ion-content [fullscreen]="true">
+
+  <div class="middle-button-container" (click)="navigateToPrevisionsPage()">
+    <p style="text-align:center;">
+      <ion-fab style="margin-top: -45px; margin-left: -30px;">
+        <ion-fab-button style="--background:#FFFFFF" size="small">
+          <ion-icon name="cloudy-outline" style="width: 30px; height: 30px; color:#27448c" size="large"></ion-icon>
+        </ion-fab-button>
+      </ion-fab>
+    </p>
+  </div>
+
+  <!-- <div id="container">
+    <strong class="capitalize">{{ folder }}</strong>
+    <p>By<a target="_blank" rel="noopener noreferrer" href="https://yabain.com">Yaba-In</a> for Demo</p>
+  </div> -->
+
+<ion-tabs>
+
+  <ion-tab-bar slot="bottom" style="background: #ffffff !important; border-color: #fff; border-radius: 15px 15px 0 0;">
+
+    <ion-tab-button (click)="navigateToHomePage()">
+      <div id="main" style="background: #ffffff !important;">
+      <ion-icon style="width: 22px; height: 22px; color:#27448c" name="home"></ion-icon>
+    </div>
+    </ion-tab-button>
+
+    <ion-tab-button style="background: #ffffff !important;" (click)="navigateToAlertsPage()">
+        <!-- <ion-menu-toggle style="background: #ffffff !important;"> -->
+          <ion-icon style="width: 22px; height: 22px; color:#27448c" name="albums"></ion-icon>
+        <!-- </ion-menu-toggle> -->
+    </ion-tab-button>
+
+    <!-- <ion-tab-button (click)="navigateToHistoryPage()">
+      <ion-icon style="width: 22px; height: 22px; color:#27448c" name="chatbubble-ellipses"></ion-icon>
+    </ion-tab-button> -->
+
+    <!-- <ion-tab-button (click)="navigateToHomePage()">
+      <ion-icon style="width: 22px; height: 22px; color:#27448c" name="home"></ion-icon>
+    </ion-tab-button> -->
+    
+    <ion-tab-button>
+    </ion-tab-button>
+
+    <ion-tab-button (click)="navigateToChatPage()">
+      <ion-icon name="chatbox-ellipses" style="width: 27px; height: 27px; color:#27448c"></ion-icon>
+    </ion-tab-button>
+
+    <ion-tab-button (click)="navigateToProfilePage()">
+      <ion-icon style="width: 22px; height: 22px; color:#27448c" name="person"></ion-icon>
+    </ion-tab-button>
+
+  </ion-tab-bar>
+
+</ion-tabs>
+</ion-content>

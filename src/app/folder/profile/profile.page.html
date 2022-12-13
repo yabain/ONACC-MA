@@ -1,0 +1,91 @@
+<ion-header class="ion-no-border" style="padding-top: 0px; padding-bottom: 0px;margin-bottom: 0;">
+    <ion-toolbar style="padding-left: 0px; padding-top: 10px;">
+        <ion-buttons slot="start">
+            <ion-icon name="chevron-back" style="color: #27448c; height: 35px !important; width: 30px;" (click)="prviousPage()"></ion-icon>
+        </ion-buttons>
+        <ion-title style="color: #000" class="center col col-center text-center"> {{'profil' | translate}}
+        </ion-title>
+        <ion-buttons slot="primary" (click)="navigateToNotificationsPage()">
+            <ion-button class="bordered" fill="solid" color="#27448c" style="color: #27448c">
+                <ion-icon color="custom" name="notifications" style="color: aliceblue;"></ion-icon>
+            </ion-button>
+        </ion-buttons>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content style="padding-top: 0px; margin-top: 0px;">
+    <div class="bg">
+        <img src="../../../assets/cover.png" alt="bg">
+    </div>
+    <div class="container">
+        <div class="img__profile">
+            <img src="../../../assets/user.jpg" alt="profile">
+            <div class="name"></div>
+            <br>
+            <!-- <span class="id">ID {{userId}}</span> -->
+        </div><br>
+        <div class="item" style="color: #000">
+            <ion-icon name="person-outline" style="height: 35px; width: 35px !important; margin-right: 5px"></ion-icon>
+            <span style="color: #000">{{userName}}</span>
+            <div class="icon"
+                (click)="openModal('Nom complet', 'userName', 'Rassurez-vous que le nom renseigné soit correct.')">
+                <img src="../../../assets/icon/icon_edit.png">
+            </div>
+        </div>
+        <div class="item" style="color: #000">
+            <ion-icon name="flag-outline" style="height: 35px; width: 35px !important; margin-right: 5px"></ion-icon>
+            <!-- <img src="../../../assets/Wallet.png" alt="Wallet"> -->
+            <span style="color: #000">{{region}}</span>
+            <div class="icon"
+                (click)="openModal('Région', 'region', 'Rassurez-vous que la région renseignée soit correct.')">
+                <img src="../../../assets/icon/icon_edit.png">
+            </div>
+        </div>
+        <div class="item" style="color: #000">
+            <ion-icon name="pin" style="height: 35px; width: 35px !important; margin-right: 5px"></ion-icon>
+            <span style="color: #000">{{city}}</span>
+            <div class="icon" (click)="openModal('Ville', 'city', 'Rassurez-vous que la ville renseignée soit correct.')">
+                <img src="../../../assets/icon/icon_edit.png">
+            </div>
+        </div>
+        <div class="item" style="color: #000">
+            <ion-icon name="call-outline" style="height: 35px; width: 35px !important; margin-right: 5px"></ion-icon>
+            <span style="color: #000">{{phone}}</span>
+            <div class="icon"
+                (click)="openModal('Numéro de téléphone', 'phone', 'Rassurez-vous que le numéro de téléphone que vous renseignez soit correct.')">
+                <img src="../../../assets/icon/icon_edit.png">
+            </div>
+        </div>
+        <div class="item" style="color: #000">
+            <ion-icon name="mail-outline" style="height: 35px; width: 35px !important; margin-right: 5px"></ion-icon>
+            <span style="color: #000">{{email}}</span>
+            <div class="icon"
+                (click)="openModal('Email', 'email', 'Rassurez-vous que cet email renseigné soit correct.')">
+                <img src="../../../assets/icon/icon_edit.png">
+            </div>
+        </div>
+        <div class="item" style="color: #000">
+            <ion-icon name="lock-closed-outline" style="height: 35px; width: 35px !important; margin-right: 5px"></ion-icon>
+            <span style="color: #000">
+                <i class="fa fa-dot-circle" style="font-size: 15px"></i>
+                <i class="fa fa-dot-circle" style="font-size: 15px"></i>
+                <i class="fa fa-dot-circle" style="font-size: 15px"></i>
+                <i class="fa fa-dot-circle" style="font-size: 15px"></i>
+                <i class="fa fa-dot-circle" style="font-size: 15px"></i>
+                <i class="fa fa-dot-circle" style="font-size: 15px"></i>
+                <i class="fa fa-dot-circle" style="font-size: 15px"></i>
+                <i class="fa fa-dot-circle" style="font-size: 15px"></i>
+                <i class="fa fa-dot-circle" style="font-size: 15px"></i>
+            </span>
+            <div class="icon">
+                <img src="../../../assets/icon/icon_edit.png"
+                    (click)="openModal('Mot de passe', '********', 'Rassurez-vous que votre ancien mot de passe renseigné soit correct. Si vous avez oublié votre mot de passe, vous recevrez un email pour le réinitialiser.')">
+            </div>
+        </div>
+        <div class="item__logout" (click)="navigateToLoginPage()">
+            <ion-icon name="log-out-outline" style="height: 35px; width: 35px !important; color: rgb(237, 90, 90); margin-right: 5px"></ion-icon>
+            <span style="color: #000">{{'logout' | translate}}</span>
+        </div>
+    </div>
+    <br><br><br>
+</ion-content>

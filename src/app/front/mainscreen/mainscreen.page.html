@@ -1,0 +1,31 @@
+<ion-header>
+</ion-header>
+
+<ion-content>
+
+  <div class="background-container">
+
+    <div class="background-filter">
+
+    <ion-card>
+      <img src="../../assets/tikala_logo2.png" style="height: 100px; width: 180px;">
+     <ion-card-header>
+       <ion-card-title style="color: #27448c;">
+        <br>
+        {{'subLogo' | translate}} <br>
+        {{'subLogo2' | translate}}
+        <br> <br> <br>
+       </ion-card-title><br><br><br>
+     </ion-card-header>
+     <ion-card-content>
+       <ion-button (click)="loginPage()">
+        <b> {{'join' | translate}} </b>
+       </ion-button>
+       <!-- Vert #27448c -->
+       <br><br><span style="color: #000000;" (click)="aboutPage()"> {{'aboutONACC' | translate}}</span>
+     </ion-card-content>
+    </ion-card>
+    </div>
+  </div>
+
+</ion-content>

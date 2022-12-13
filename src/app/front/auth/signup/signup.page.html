@@ -1,0 +1,126 @@
+<ion-content>
+  <div class="background-pic">
+    <div class="background-filter">
+      <!-- <div class="shape"><img src="../../assets/shape.svg" /></div> -->
+
+      <ion-card>
+        <ion-card-header style="padding-top: 0px;">
+          <ion-card-title>
+            <b style="color: #27448c"> {{'register' | translate}} </b>
+          </ion-card-title>
+        </ion-card-header>
+        <ion-card-content>
+          <form [formGroup]="registerForm" (ngSubmit)="submit()">
+            <ion-item>
+              <ion-input type="text" id="nom" placeholder="{{'name' | translate}}" formControlName="nom"
+                [ngClass]="{ 'is-invalid': submitted && f.nom.errors }"></ion-input><br>
+              <div *ngIf="submitted && f.nom.errors" class="invalid-feedback text-danger">
+                <div *ngIf="f.nom.errors.required"> 👈🏾</div>
+              </div>
+            </ion-item>
+            <!-- <ion-item>
+              <ion-input type="text" id="lastName" placeholder="Prénom" formControlName="lastName"
+                [ngClass]="{ 'is-invalid': submitted && f.lastName.errors }"></ion-input><br>
+              <div *ngIf="submitted && f.lastName.errors" class="invalid-feedback text-danger">
+                <div *ngIf="f.lastName.errors.required"> 👈🏾</div>
+              </div>
+            </ion-item> -->
+            <!-- <ion-item>
+              <select id="region" formControlName="region" class="col-md-12"
+                  [ngClass]="{ 'is-invalid': submitted && f.region.errors }">
+                  <option value="Cameroon" selected default>Cameroon</option>
+                  <option value="Gabon">Gabon</option>
+                  <option value="Guinee">Equatorial Guinea</option>
+              </select>
+              <div *ngIf="submitted && f.region.errors" class="invalid-feedback text-danger">
+                  <div *ngIf="f.region.errors.required"> 👈🏾</div>
+              </div>
+            </ion-item> -->
+            <!-- <ion-item>
+              <ion-input type="text" id="phone" placeholder="Téléphone" formControlName="phone"
+                [ngClass]="{ 'is-invalid': submitted && f.phone.errors }"></ion-input><br>
+              <div *ngIf="submitted && f.phone.errors" class="invalid-feedback text-danger">
+                <div *ngIf="f.phone.errors.required"> 👈🏾</div>
+              </div>
+            </ion-item> -->
+            <ion-item>
+              <ion-input type="email" id="email" placeholder="{{'emailAdd' | translate}}" formControlName="email"
+                [ngClass]="{ 'is-invalid': submitted && f.email.errors }"></ion-input><br>
+              <div *ngIf="submitted && f.email.errors" class="invalid-feedback text-danger">
+                <div *ngIf="f.email.errors.required"> 👈🏾</div>
+              </div>
+            </ion-item>
+            <ion-item>
+              <ion-input type="password" id="password" placeholder="{{'password' | translate}}" formControlName="password"
+                [ngClass]="{ 'is-invalid': submitted && f.password.errors }"></ion-input><br>
+              <div *ngIf="submitted && f.password.errors" class="invalid-feedback text-danger">
+                <div *ngIf="f.password.errors.required"> 👈🏾</div>
+              </div>
+            </ion-item>
+            <!-- <ion-item>
+              <ion-input type="password" id="password2" placeholder="Répétition du mot de passe" formControlName="password2"
+                [ngClass]="{ 'is-invalid': submitted && f.password2.errors }"></ion-input><br>
+              <div *ngIf="submitted && f.password2.errors" class="invalid-feedback text-danger">
+                <div *ngIf="f.password2.errors.required"> 👈🏾</div>
+              </div>
+            </ion-item> -->
+            <ion-item>
+              <label for="region" style="color: black; margin-left: 20px; margin-right: auto;">{{'region' | translate}} : </label>
+              <select (change)="onSelect($event)" id="region" formControlName="region" style="color: #fff !important; background-color: #27448c !important;"
+                [ngClass]="{ 'is-invalid': submitted && f.region.errors }">
+                <!-- <option selected></option> -->
+                <option *ngFor="let 
+                    countries of region" value="{{countries.id}}">
+                  {{countries.name}}
+                </option>
+              </select>
+              <div *ngIf="submitted && f.region.errors" class="invalid-feedback text-danger">
+                <div *ngIf="f.region.errors.required"> 👈🏾</div>
+              </div>
+            </ion-item>
+            <ion-item>
+              <label for="city" style="color: black; margin-left: 20px; margin-right: auto;">{{'city' | translate}} : </label>
+              <select id="city" formControlName="city" [ngClass]="{ 'is-invalid': submitted && f.city.errors }" style="color: #fff !important; background-color: #27448c !important;">
+                <option>{{'cityMsg' | translate}}</option>
+                <option *ngFor="let cities of
+                 city">{{cities.name}}</option>
+              </select>
+              <div *ngIf="submitted && f.city.errors" class="invalid-feedback text-danger">
+                <div *ngIf="f.city.errors.required"> 👈🏾</div>
+              </div>
+            </ion-item>
+            <ion-item>
+              <div *ngIf="submitted && f.user_agree.errors" class="invalid-feedback text-danger">
+                <div *ngIf="f.user_agree.errors.required">👉🏾 </div>
+              </div>
+              <input checked type="checkbox" class="switch-input" id="user_agree" name="user_agree"
+                [ngClass]="{ 'is-invalid': submitted && f.user_agree.errors }" formControlName="user_agree">
+              <span for="user_agree" class="switch-slider" data-checked="&#x2713;" data-unchecked="&#x2715;"></span><span
+                style="color: black;"> {{'agree' | translate}}
+                <a (click)="navigateToPrivacyPage()"><b> {{'privacy' | translate}}</b></a>.</span>
+            </ion-item>
+            <!-- <div class="alert" *ngIf="error">
+              <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span> 
+              <strong>{{'error' | translate}}: </strong> {{errorMsg}}
+            </div> -->
+            <!-- <div class="alertSuccess" *ngIf="success">
+              <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span> 
+              <strong>{{'success' | translate}}!</strong> {{'signupSuccessMsg' | translate}}.
+            </div> -->
+
+            <div class="bottom-section">
+              <ion-button type="submit" *ngIf="waitingRegistration" disabled>
+                <b><app-progress-indeterminate></app-progress-indeterminate></b>
+              </ion-button>
+              <ion-button type="submit" *ngIf="!waitingRegistration">{{'createAccount' | translate}}</ion-button>
+              
+              <span style="color: black"> {{'subCreateAccount' | translate}} ? <a
+                  (click)="navigateTologinPage()">{{'login' | translate}}</a></span>
+            </div>
+          </form>
+        </ion-card-content>
+      </ion-card>
+    </div>
+  </div>
+
+</ion-content>

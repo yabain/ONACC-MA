@@ -1,0 +1,55 @@
+<ion-header class="ion-no-border" style="padding-top: 0px; padding-bottom: 0px;margin-bottom: 0;">
+  <ion-toolbar style="padding-left: 0px; padding-top: 10px;">
+      <ion-buttons slot="start">
+              <ion-icon name="chevron-back" style="color: #27448c; height: 35px !important; width: 30px;" (click)="closeModal()"></ion-icon>
+      </ion-buttons>
+      <ion-title style="color: #000" class="center col col-center text-center"> {{title}}</ion-title>
+
+      <ion-buttons slot="primary" (click)="navigateToNotificationsPage(); closeModal()">
+          <ion-button class="bordered" fill="solid" color="#27448c" style="color: #27448c">
+              <ion-icon color="custom" name="notifications" style="color: aliceblue;"></ion-icon>
+          </ion-button>
+      </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content style="padding-top: 0px; margin-top: 0px;" [fullscreen]="true">
+  <div id="container">
+    <div class="slides ion-margin-bottom" style="padding-top: 0px; padding-bottom: 0px">
+      <ion-slides class="addit" style="background: url({{newsPhotoUrl}}); background-repeat: no-repeat;background-size: 100% 100%;">
+      </ion-slides>
+      <ion-grid>
+        <ion-card-content class="ion-text-left" style="color: black;">
+          <h2><b>{{newsTitle}}</b></h2>
+          <table style="border: none; text-align: center !important; color: black; width: 100%; margin-top: 10px;">
+            <tr>
+              <td style="padding-right: 0px;">
+                <ion-card-subtitle class="ion-text-left" style="font-size: 0.8em;"><ion-icon name="person"></ion-icon> {{newsAutor}}</ion-card-subtitle>
+              </td>
+              <td><ion-card-subtitle class="ion-text-right" style="font-size: 0.8em;">..... <ion-icon name="location"></ion-icon></ion-card-subtitle>
+              </td>
+            </tr>
+            <tr>
+              <td style="padding-right: none;">
+                <ion-card-subtitle class="ion-text-left" style="font-size: 0.8em;"><ion-icon name="calendar"></ion-icon> {{newsDate | date: 'dd/MM/yyyy'}} </ion-card-subtitle>
+              </td>
+              <td>
+                <ion-card-subtitle class="ion-text-right" style="font-size: 0.8em;">{{newsDate | date: 'shortTime'}}  <ion-icon name="time"></ion-icon></ion-card-subtitle>
+              </td>
+            </tr>
+          </table>
+        </ion-card-content>
+      </ion-grid>
+    </div>
+    <div>
+      <!-- <ion-item lines=""> -->
+      <ion-grid style="color: black !important; background-color: white;">{{newsContentShort}}<br>
+        <p style="text-align: justify">{{newsContent}}
+        </p>
+      </ion-grid>
+      <!-- </ion-item> -->
+    </div>
+  </div>
+  <br><br><br>
+
+</ion-content>

@@ -1,0 +1,26 @@
+<ion-header class="ion-no-border" style="padding-top: 5px; padding-bottom: 0px;margin-bottom: 0;">
+    <ion-toolbar style="padding-left: 0px; padding-top: 5px;">
+        <ion-buttons slot="start">
+            <ion-icon name="chevron-back" style="color: #27448c; height: 35px !important; width: 30px;" (click)="closeModal()"></ion-icon>
+        </ion-buttons>
+        <ion-title style="color: #27448c" class="center col col-center text-center"> {{modalTitle}}</ion-title>
+        <ion-icon slot="primary" type="submit" name="checkmark-sharp" (click)="save();closeModal()" width="15px" style="color: #27448c; font-size: 30px"></ion-icon>
+        <!-- <i slot="primary" type="submit" (click)="save();closeModal()" width="15px" style="color: black; font-size: 20px"
+            class="fa fa-check"></i> -->
+    </ion-toolbar>
+</ion-header>
+<ion-content style="background-color: white; color: black;">
+    <div style="background-color: white; color: black">
+            <ion-item>
+                <ion-input type="email" placeholder="{{modalValue}}"></ion-input>
+            </ion-item>
+            <!-- <a  (click)="navigateToForgotPage()">Mot de passe oublié.</a> -->
+
+            <!-- <div class="bottom-section">
+          <ion-button type="submit" (click)="submit()"><b> Se connecter </b></ion-button>
+          <span> Pas de compte ? <a (click)="navigateToSignupPage()">Créer </a> maintenant</span>
+        </div> -->
+        <!-- </ion-card-content> -->
+
+    </div>
+</ion-content>

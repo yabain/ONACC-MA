@@ -1,0 +1,95 @@
+<ion-header class="ion-no-border" style="padding-top: 0px; padding-bottom: 0px;margin-bottom: 0;">
+  <ion-toolbar style="padding-left: 0px; padding-top: 10px;">
+    <ion-buttons slot="start">
+      <!-- <img src="../../../assets/chevron-left.png" style="color: #27448c; height: 35px" (click)="prviousPage()"> -->
+      <ion-icon name="chevron-back" style="color: #27448c; height: 35px !important; width: 30px;"
+        (click)="prviousPage()"></ion-icon>
+      <!-- <i class="fa fa-arrow-left" style="color: #27448c; font-size: 25px" (click)="prviousPage()"></i> -->
+    </ion-buttons>
+    <ion-title style="color: #000" class="center col col-center text-center"> {{title}}</ion-title>
+    <ion-buttons slot="primary" (click)="navigateToNotificationsPage()">
+      <ion-button class="bordered" fill="solid" color="#27448c" style="color: #27448c">
+        <ion-icon color="custom" name="notifications" style="color: aliceblue;"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <div class="container" *ngIf="waitingData">
+      <div class="container">
+        <div class="post">
+          <div class="avatar"></div>
+          <div class="line"></div>
+          <div class="line"></div>
+        </div>
+      
+        <div class="post">
+          <div class="avatar"></div>
+          <div class="line"></div>
+          <div class="line"></div>
+        </div>
+      
+        <div class="post">
+          <div class="avatar"></div>
+          <div class="line"></div>
+          <div class="line"></div>
+        </div>
+
+        <div class="post">
+          <div class="avatar"></div>
+          <div class="line"></div>
+          <div class="line"></div>
+        </div>
+
+        <div class="post">
+          <div class="avatar"></div>
+          <div class="line"></div>
+          <div class="line"></div>
+        </div>
+      </div>
+    <br>
+  </div>
+
+  <div class="container" style="margin: 0px; padding: 0px;" *ngIf="!waitingData">
+    <div class="row" *ngFor="let news of newsTab; let i = index"
+      (click)="openModal(news.newsTitle, news.photo, news.newsDate, news.newsContent, news.newsAutor, news.newsContentShort)">
+      <div class="column">
+        <div class="card" style="display: flex; align-items:center;">
+          <img src="http://dev.tilakat.com:8091{{news.photo}}" alt="img"
+            style="height: 100px !important; width: 100px !important; vertical-align:middle;">
+          <p class="wrapper">
+            <span class="demo-1" style="font-size: 1em !important; color: rgb(37, 36, 36); margin-left: 3px;" >{{news.newsTitle}} </span>
+            
+            <span style="font-size: 0.7em !important; color: rgb(64, 63, 63);">
+              <ion-icon name="calendar"></ion-icon> {{news.newsDate | date: 'dd/MM/yyyy'}} <br>
+            <ion-icon name="calendar"></ion-icon> {{news.newsDate | date: 'shortTime'}}</span>
+          </p>
+        </div>
+      </div>
+    </div>
+
+
+    <table style="border: none; text-align: center !important; color: #27448c; width: 100%; margin-top: 10px;">
+      <tr>
+        <td style="padding-right: 0px;" *ngIf="!prevDisabeled">
+          <ion-card-subtitle (click)="prevPage()" class="ion-text-left" style="font-size: 1em; color: #27448c"><ion-icon name="chevron-back"></ion-icon>Précédent</ion-card-subtitle>
+        </td>
+        <td style="padding-right: 0px; color: #fff;" *ngIf="prevDisabeled">
+          000000000
+        </td>
+        <td>
+          <ion-card-subtitle class="ion-text-center" style="font-size: 1em; color: #27448c">{{pageNumber}}</ion-card-subtitle>
+        </td>
+        <td (click)="nextPage()">
+          <ion-card-subtitle class="ion-text-right" style="font-size: 1em; color: #27448c">Suivant <ion-icon name="chevron-forward"></ion-icon></ion-card-subtitle>
+        </td>
+      </tr>
+    </table>
+  </div>
+  <br><br>
+  <br><br>
+</ion-content>
+
+
+

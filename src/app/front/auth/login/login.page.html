@@ -1,0 +1,56 @@
+<ion-header>
+
+</ion-header>
+
+<ion-content>
+
+  <div class="background-pic">
+    <div class="background-filter">
+      <!-- <div class="shape"><img src="../../assets/shape.svg" /></div> -->
+
+      <ion-card>
+        <ion-card-header>
+          <ion-card-title>
+            <b style="color: #27448c"> {{'login' | translate}} </b>
+          </ion-card-title>
+        </ion-card-header>
+        <ion-card-content>
+          <form [formGroup]="loginForm" (ngSubmit)="submit()" style="color: white;">
+            <div class="alert" *ngIf="error">
+              <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span> 
+              <strong>{{'error' | translate}}:</strong> {{errorMsg}}
+            </div>
+            
+            <ion-item>
+              <ion-input type="email" id="email" formControlName="email" placeholder="{{'emailAdd' | translate}}"
+                 [ngClass]="{ 'is-invalid': submitted && f.email.errors }"></ion-input>
+            </ion-item>
+            <div *ngIf="submitted && f.email.errors" class="invalid-feedback text-danger">
+              <div *ngIf="f.email.errors.required">{{'requireEmail' | translate}}<br><br></div>
+            </div>
+            <ion-item>
+              <ion-input type="password" id="password" formControlName="password" placeholder="{{'password' | translate}}" 
+              [ngClass]="{ 'is-invalid': submitted && f.password.errors }"></ion-input>
+            </ion-item>
+            <div *ngIf="submitted && f.password.errors" class="invalid-feedback text-danger">
+              <div *ngIf="f.password.errors.required">{{'requirePwd' | translate}}</div>
+          </div>
+          <br>
+            <a (click)="navigateToForgotPage()"><b> {{'forgotPwd' | translate}}.</b></a>
+
+            <div class="bottom-section">
+              
+              <ion-button type="submit" *ngIf="waitingLogin" disabled>
+                <app-progress-indeterminate></app-progress-indeterminate>
+              </ion-button>
+              <!-- <ion-button type="submit" *ngIf="!waitingLogin"><b> {{'toLogin' | translate}} </b></ion-button> -->
+              <ion-button *ngIf="!waitingLogin" (click)="navigateToHomePage()"><b> {{'toLogin' | translate}} </b></ion-button>
+              <span style="color: black;"> {{'notAccount' | translate}} ? <a (click)="navigateToSignupPage()">{{'create' | translate}} </a> {{'now' | translate}}</span>
+            </div>
+          </form>
+        </ion-card-content>
+      </ion-card>
+    </div>
+  </div>
+
+</ion-content>

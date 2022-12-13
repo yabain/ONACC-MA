@@ -1,0 +1,32 @@
+<ion-header class="ion-no-border" style="padding-top: 0px; padding-bottom: 0px;margin-bottom: 0;">
+    <ion-toolbar style="padding-left: 0px; padding-top: 10px;">
+        <ion-buttons slot="start">
+                <ion-icon name="chevron-back" style="color: #27448c; height: 35px !important; width: 30px;" (click)="navigateToHomePage()"></ion-icon>
+        </ion-buttons>
+        <ion-title style="color: #000" class="center col col-center text-center"> {{title}}</ion-title>
+
+        <ion-buttons slot="primary" (click)="navigateToNotificationsPage()">
+            <ion-button class="bordered" fill="solid" color="#27448c" style="color: #27448c">
+                <ion-icon color="custom" name="notifications" style="color: aliceblue;"></ion-icon>
+            </ion-button>
+        </ion-buttons>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+
+    <div id="container">
+      <div class="searchbar" style="padding-top: 0px; margin: 0; padding: 0px;">
+          <div id="all" class="tab-pane fade in active"
+            style="margin: 0px 3px 0px 3px; padding-top: 0px; background-color: white !important;"><br><br>
+            <app-progress-indeterminate></app-progress-indeterminate>
+          </div>
+        <br><br><br>
+  
+  
+        <!-- Main Featured Products Section -->
+  
+      </div>
+    </div>
+  
+  </ion-content>
